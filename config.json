@@ -1,0 +1,5 @@
+{
+  "ConnectionString": "Data Source=(localdb)\\mssqllocaldb;Initial Catalog=VirtualLibraryDB;TrustServerCertificate=True;",
+  "StringOptionalParam": "String oprional parameter value",
+  "BoolRequiredParam": true,
+}
