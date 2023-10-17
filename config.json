@@ -1,5 +1,5 @@
 {
-  "ConnectionString": "Data Source=(local);Initial Catalog=TestDB;Integrated Security=True;",
+  "ConnectionString": "Data Source=(local);Initial Catalog=TestDB;Integrated Security=True;TrustServerCertificate=True",
   "StringOptionalParam": "String oprional parameter value",
   "BoolRequiredParam": true
 }

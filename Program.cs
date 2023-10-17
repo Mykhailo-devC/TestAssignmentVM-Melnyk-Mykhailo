@@ -1,15 +1,18 @@
-﻿using System.Data.SqlClient;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Data.SqlClient;
 using TestAssignmentVM_Melnyk_Mykhailo;
 
 IConfigurationReader reader = new ConfigurationReader();
 
 Console.WriteLine("Connection string: {0}", reader.GetConnectionString());
 
-using(SqlConnection connection = new SqlConnection(reader.GetConnectionString()))
+var options = new DbContextOptionsBuilder<DataContext>()
+                .UseSqlServer(reader.GetConnectionString())
+                .Options;
+
+using (var context = new DataContext(options))
 {
-    connection.Open();
-    Console.WriteLine(connection.State);
-    connection.Close();
+    context.Database.EnsureDeleted();
 }
 
 Console.WriteLine();
